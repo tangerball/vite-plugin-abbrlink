@@ -1,0 +1,78 @@
+{
+  "name": "vite-plugin-abbrlink",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "tangerball",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "vite-plugin-abbrlink",
+    "abbrlink",
+    "astro"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "release": "release-it",
+    "prepare": "husky install",
+    "format": "prettier --write \"**/*.{js,ts,json,html}\""
+  },
+  "engines": {
+    "node": "^16.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/tangerball/vite-plugin-abbrlink/issues"
+  },
+  "homepage": "https://github.com/tangerball/vite-plugin-abbrlink#readme",
+  "peerDependencies": {
+    "vite": "^5.2.11"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "crc": "^4.3.2",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "unbuild": "^2.0.0",
+    "vite": "^5.2.11"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.24.5",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/node": "^20.12.11",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^9.2.0",
+    "eslint-config-alloy": "^5.1.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "release-it": "^17.2.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "lint-staged": {
+    "*.{js,ts,json,html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
